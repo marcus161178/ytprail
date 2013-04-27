@@ -1,0 +1,60 @@
+<h1 class="pad">YTP Blog</h1>
+
+
+<div class="pad row">
+	<div class="twelve columns">
+		<h2><%= @recentpost.title %></h2>
+		<p><%= truncate(@recentpost.body) %>...see more</p>
+	   <p>Posted by: <%= @recentpost.user.username %></p>
+	</div>
+</div>
+
+
+
+<div class="row">
+	<div class="sidebarcontact four columns">
+		<h3>Contact Us</h3>
+		<%= form_tag("email", :method => "post") do %>
+		  <%= label_tag(:q, "Name:") %>
+		  <%= text_field_tag(:q) %>
+		  <%= label_tag(:q, "Wedding Date:") %>
+		  <%= text_field_tag(:q) %>
+		  <%= label_tag(:q, "Email Address:") %>
+		  <%= text_field_tag(:q) %>
+		  <%= submit_tag("Send") %>
+		<% end %>
+		
+	</div><!--four columns-->
+  	
+	<div class="eight columns">
+		
+		<% if @posts.first.id == @recentpost.id %>
+		<% @posts.slice!(0) %>
+   		<% end %>
+		
+		<% @posts.each_slice(2) do |slice| %>
+		
+		<div class="row">
+			<% slice.each do |post| %>
+			
+			
+			<div class="six columns">
+   	 		   <h2><%= post.title %></h2>
+    		   <p><%= truncate(post.body) %>...<%= link_to 'see more', post %></p>
+    		   <p>Posted by: <%= post.user.username %></p>
+    		   <%= link_to 'Edit', edit_post_path(post) %>
+    			<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+			</div>
+			<% end %>
+			
+		</div>
+		
+	<% end %>
+	</div><!--eight columns-->
+	
+</div><!--frontslideshow -->
+
+
+<br />
+
+<%= link_to 'New Post', new_post_path %>

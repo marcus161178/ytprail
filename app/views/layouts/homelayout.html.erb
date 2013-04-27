@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <title>Photo Gallery</title>
+  
+  
+  <%= stylesheet_link_tag "gumby" %>
+  <%= stylesheet_link_tag "home" %>
+  
+  <%= stylesheet_link_tag "flexslider.css"%>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+  
+  <%= javascript_include_tag "jquery.flexslider" %>
+  <!-- Place in the <head>, after the three links -->
+  <script type="text/javascript" charset="utf-8">
+    $(window).load(function() {
+      $('.flexslider').flexslider();
+    });
+  </script>
+    
+  
+ 
+
+<body class="" >
+<div id="page_wrap" class="container row">	
+	
+	<header id="masthead" class="site-header" role="banner">
+        <a class="hrimge" href="http://www.tntweddings.com/">
+		<img src="http://www.tntweddings.com/wp-content/uploads/2013/04/YTP-header1.png" class="header-image1" width="329" height="74" alt="" /></a>
+                
+	</header><!-- #masthead -->
+
+		<div class="navbar" id="nav1">
+			<a class="toggle" gumby-trigger="#nav1 > .row > ul" href="#"><i class="icon-menu"></i></a>
+			
+			<div class=row><div class="line push_one ten columns"></div></div>
+			
+				<ul class="">
+					<li ><%= link_to "HOME", home_path %></li>
+					<li ><%= link_to "BLOG", posts_path %></li>
+					<li ><a href="#">CLIENT</a></li>
+					<li ><a href="#">VENDORS</a></li>
+					<li ><a href="#">CONTACT</a></li>
+				</ul>
+		</div><!-- #site-navigation -->
+		
+	<%= yield %>
+	
+	<div class=row><div class="line push_one ten columns"></div></div>
+	
+	<div id="bottomlinks" class="row" role="complementary">
+	
+	
+		<div class="btmlink1 three columns">
+			<h3 class="widget-title">Reception Venues</h3><ul>	<li class="cat-item cat-item-18"><a href="#" title="View all posts filed under Brash House">Brash House</a>
+	</li>
+		<li class="footeritem"><a href="#" title="View all posts filed under Hilton">Hilton</a>
+	</li>
+		<li class="footeritem"><a href="#" title="View all posts filed under Hyatt">Hyatt</a>
+	</li>
+		<li class="footeritem"><a href="#" title="View all posts filed under Pier One">Pier One</a>
+	</li>
+	</ul>	
+			</div><!-- .first -->
+		
+		
+	
+		<div class="btmlink2 three columns">
+			<h3 class="widget-title">Country/Island</h3><ul>	<li class="footeritem"><a href="http://www.tntweddings.com/category/countryisland/barbados/" title="View all posts filed under Barbados">Barbados</a>
+	</li>
+		<li class="footeritem"><a href="#" title="View all posts filed under St. Lucia">St. Lucia</a>
+	</li>
+		<li class="footeritem"><a href="#" title="View all posts filed under Tobago">Tobago</a>
+	</li>
+		<li class="footeritem"><a href="#" title="View all posts filed under Trinidad">Trinidad</a>
+	</li>
+	</ul>	
+	</div><!-- .second -->
+
+
+
+	
+	        <div class="btmlink3 three columns">
+	               <h3 class="widget-title">Ceremony Type</h3>
+				   <ul>	
+		<li class="footeritem"><a href="#" title="View all posts filed under Chinese">Chinese</a>
+	</li>
+		<li class="footeritem"><a href="#" title="View all posts filed under Christian">Christian</a>
+	</li>
+		<li class="footeritem"><a href="#" title="View all posts filed under Hindu">Hindu</a>
+	</li>
+		<li class="footeritem"><a href="#" title="View all posts filed under Muslim">Muslim</a>
+	</li>
+		<li class="footeritem"><a href="#" title="View all posts filed under Non-Religious">Non-Religious</a>
+	</li>
+	</ul>       </div><!-- .third -->
+
+
+        
+	        <div class="btmlink4 three columns">
+	                				<h3 class="">Recent Posts</h3>		<ul>
+						<li class="">
+					<a href="#" title="Choosing a Venue">Choosing a Venue</a>
+							</li>
+						<li class="">
+					<a href="#" title="How to get registered!">How to get registered!</a>
+							</li>
+					</ul>
+		</div><!-- .fourth -->
+        
+	</div><!--#bottomlinks.row -->
+	<div class="copyright">
+
+<p>YAISA TANGWELL PHOTOGRAPHY © 2013 All rights reserved</center></p>
+	</div><!-- .site-info -->
+</div><!--.pagewrap-->
+
+	
+    <%= javascript_include_tag "fluidvids" %>
+	
+	
+	
+</body>

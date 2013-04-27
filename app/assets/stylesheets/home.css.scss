@@ -1,0 +1,147 @@
+@media only screen {
+	html {
+		
+	font-size: 13px;
+	}
+
+
+	h3 {
+		font-size: 1.2em;
+	}
+
+}
+
+.pad {
+	padding-left: 100px;
+}
+.navbar {
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	
+	.row .line {
+		border-top:1px #e5e4e3 solid;
+		margin-bottom:20px;
+	}
+			
+	ul {
+		display: inline-block;
+		padding: 0px;
+		
+	}
+}
+
+.column, .columns {
+	margin-left: 0;
+}
+	
+
+
+
+#page_wrap{
+
+background: #F7F6F4;
+margin-top: 50px;
+margin-bottom: 60px;	
+box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+}
+
+#masthead {
+	
+	text-align: center;
+	margin: 20px 0px 20px 0px;
+}
+
+.hrimge {
+	margin: 0px 0px 15px 0px;
+}
+
+#frontslideshow {
+	text-align: center;
+	padding-left:35px;
+	padding-right:35px;
+	li {
+	padding-bottom: 0em;
+	}
+	
+}
+
+.subtitle {
+	text-align: center;
+	margin: 0px 0px 15px 0px;
+	
+}
+
+
+
+.row.subheading {
+	
+	margin-bottom: 5px;
+	
+}
+
+.leftcontent p {
+	margin-left: 30px;
+}
+
+.rightcontent  {
+	padding-top: 20px;
+	text-align: center;
+	
+}
+
+.row .line {
+	border-top:1px #e5e4e3 solid;
+}
+#bottomlinks {
+	margin-bottom: 35px;
+	margin-top: 20px;
+
+}
+
+.btmlink1.three.columns {
+	padding-left: 70px;
+}
+
+.btmlink2.three.columns {
+	padding-left: 80px;
+}
+
+
+.btmlink3.three.columns {
+	padding-left: 80px;
+}
+
+.btmlink4.three.columns {
+	padding-left: 70px;
+}
+
+.frontpic {
+	box-shadow: 2px 2px 2px 2px #cdcdcd;
+	
+}
+
+
+.copyright p {
+	padding-bottom:5px;
+	text-align:center;
+	font-size: .9em;
+	margin: 40px 0px 0px 0px;
+	
+}
+
+.bloginput {
+	
+	padding-left:80px;
+}
+
+.sidebarcontact {
+	padding-left: 35px;
+	padding-top: 30px;
+	
+}
+.ytpforms .input {
+	padding-bottom:25px;
+	font-size: 1.2em;
+	
+}

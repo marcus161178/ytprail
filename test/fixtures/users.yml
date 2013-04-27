@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bridename: MyString
+  groomname: MyString
+  username: MyString
+  password_digest: MyString
+
+two:
+  bridename: MyString
+  groomname: MyString
+  username: MyString
+  password_digest: MyString

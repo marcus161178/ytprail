@@ -1,0 +1,47 @@
+<div class="ytpforms">
+<%= form_for @post, :html => {:multipart => true } do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="input">
+    <%= f.label :body %>
+    <%= f.text_area :body, :size => "50x80" %>
+  </div>
+  <div class="input">
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %>
+	
+	<div class="fileupload">
+	
+	    	<%= f.fields_for :blog_images do |img| %>
+
+	    	<%= img.file_field :imagefile %>
+
+	    	<% end %>
+
+	</div>
+  
+	
+<div class="input">
+	  
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>
+
+
+</div>
+
