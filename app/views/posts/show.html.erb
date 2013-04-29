@@ -6,7 +6,9 @@
 </p>
 
 <p>
-  <b>Body:</b>
+  <% @post.blog_images.each do |img| %>
+  <%=  image_tag img.imagefile %>
+  <% end %>
   <%= @post.body %>
 </p>
 

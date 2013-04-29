@@ -8,8 +8,8 @@
 <% @images.each do |image| %>
 
 	<div class="galleryimage">
-		<a href=<%= "assets/"+image.image_url %> rel="lightbox[YTP]" startslideshow = "true" slideshowwidth="-1" slideshowheight="-1" title=<%= image.image_name %>>
-		<img border="0" src="assets/copyright.gif" width="158" height="105" style= "background-image:url(assets/<%= image.image_url %>); background-position:center; background-repeat:no-repeat; border:none;"/></a>
+		<a href=<%= "/assets/"+image.image_url %> rel="lightbox[YTP]" startslideshow = "true" slideshowwidth="-1" slideshowheight="-1" title=<%= image.image_name %>>
+		<img border="0" src="/assets/copyright.gif" width="158" height="105" style= "background-image:url(/assets/<%= image.image_url %>); background-position:center; background-repeat:no-repeat; border:none;"/></a>
 		<div class="imagetitle"><%= image.image_name %></div>
 </div>
 
@@ -21,7 +21,7 @@
 
 
 <span class="hidden">
-	<a href=<%= "assets/"+image.image_url %> rel="lightbox[YTP]" startslideshow = "true" slideshowwidth="-1" slideshowheight="-1" title=<%= image.image_name %>>
+	<a href=<%= "/assets/"+image.image_url %> rel="lightbox[YTP]" startslideshow = "true" slideshowwidth="-1" slideshowheight="-1" title=<%= image.image_name %>>
 	 <%= @num = @num + 1 %> </a></span>
 
 

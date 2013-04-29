@@ -1,15 +1,30 @@
-<h1 class="pad">YTP Blog</h1>
-
-
+<% unless @recentpost.blank? %>
 <div class="pad row">
 	<div class="twelve columns">
-		<h2><%= @recentpost.title %></h2>
-		<p><%= truncate(@recentpost.body) %>...see more</p>
+		<h2> <%= link_to @recentpost.title, @recentpost %></h2>
+		
+		<div id="frontslideshow"><p>
+			<div class="flexslider">
+				<ul class="slides">
+					<% @recentpost.blog_images.each do |img| %>
+					<li>
+						<%=  image_tag img.imagefile %>
+					</li>
+					<% end %>
+				</ul>
+			</div>		
+		</div>
+		
+		
+		<p>Posted on: <%= @recentpost.created_at %></p>
+		<p><%= truncate(@recentpost.body) %>...<%= link_to 'see more', @recentpost %></p>
 	   <p>Posted by: <%= @recentpost.user.username %></p>
+	   <%= link_to 'Edit', edit_post_path(@recentpost) %>
+		<%= link_to 'Destroy', @recentpost, method: :delete, data: { confirm: 'Are you sure?' } %>
 	</div>
 </div>
 
-
+<% end %>
 
 <div class="row">
 	<div class="sidebarcontact four columns">
@@ -28,18 +43,25 @@
   	
 	<div class="eight columns">
 		
-		<% if @posts.first.id == @recentpost.id %>
+		<% unless @recentpost.blank? %>
+		
 		<% @posts.slice!(0) %>
-   		<% end %>
+		
+		<% end%>
+		
 		
 		<% @posts.each_slice(2) do |slice| %>
 		
 		<div class="row">
 			<% slice.each do |post| %>
 			
-			
-			<div class="six columns">
-   	 		   <h2><%= post.title %></h2>
+				<div class="six columns">
+   	 		   	 <%= link_to post.title, post %>
+			   <% unless post.blog_images.first.blank? %>
+			   <%=  image_tag post.blog_images.sample.imagefile %>
+   				<% end %>
+			   
+	   			<p>Posted on: <%= post.created_at %></p>
     		   <p><%= truncate(post.body) %>...<%= link_to 'see more', post %></p>
     		   <p>Posted by: <%= post.user.username %></p>
     		   <%= link_to 'Edit', edit_post_path(post) %>
@@ -54,6 +76,7 @@
 	
 </div><!--frontslideshow -->
 
+<%= paginate @posts %>
 
 <br />
 

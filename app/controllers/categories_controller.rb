@@ -1,6 +1,9 @@
 class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
+  
+  layout "homelayout"
+  
   def index
     @categories = Category.all
 

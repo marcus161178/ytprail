@@ -2,12 +2,22 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   
+  
 # before_filter :parse_raw_upload, :only => :add_files
   
   layout "bloglayout"
   def index
-    @posts = Post.all(:order => "created_at DESC")
-    @recentpost = Post.last
+    
+    if params[:page].blank? || params[:page].to_i == 1
+    @recentpost = Post.first
+    end
+    
+    @posts = Post.page(params[:page]).per(params[:page].blank? || params[:page].to_i == 1 ? 7 : 6 )
+      
+    
+    
+    
+    @blogimage = BlogImage.all
 
     respond_to do |format|
       format.html # index.html.erb
